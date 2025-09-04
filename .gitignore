@@ -1,0 +1,3 @@
+mv_curso/
+*.ipynb_checkpoints
+__pycache__/
