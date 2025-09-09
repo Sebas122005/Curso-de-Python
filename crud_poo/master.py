@@ -1,0 +1,1 @@
+# Funciones para manejar el CRUD de la base de datos
