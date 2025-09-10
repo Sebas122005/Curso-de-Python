@@ -17,3 +17,7 @@
 > pip install jupyterlab
 # Inicializar interfaz de Jupyter
 > jupyter lab
+# Guardar librerias instaladas de mi entorno virtual en requirements.txt
+> pip freeze > requirements.txt
+# Instalar librerias de requirements.txt
+> pip install -r requirements.txt
