@@ -3,4 +3,4 @@ mv_curso/
 __pycache__/
 mv_project/
 config/
-config.ini
+/config.ini
