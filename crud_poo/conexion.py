@@ -3,16 +3,28 @@
 
 import pymysql
 from pymysql.err import Error
+import configparser
 
 class DAO:
     def __init__(self):
+        # 1. Leer el archivo de configuración
+        config = configparser.ConfigParser()
+        try:
+            config.read('config.ini')
+            db_config = config['database']
+        except KeyError:
+            print("Error: La sección 'database' no se encontró en 'config.ini'.")
+            self.conexion = None
+            return
+
+        # 2. Usar los valores del archivo para la conexión
         try:
             self.conexion = pymysql.connect(
-                host='localhost',
-                port=3306,
-                user='root',
-                password='',
-                db='crud_poo'
+                host=db_config['host'],
+                port=int(db_config['port']),
+                user=db_config['user'],
+                password=db_config['password'],
+                db=db_config['db'],
             )
             print("Conexión establecida con éxito.")
         except Error as ex:

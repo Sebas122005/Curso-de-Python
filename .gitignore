@@ -1,3 +1,5 @@
 mv_curso/
 *.ipynb_checkpoints
 __pycache__/
+mv_project/
+config/
