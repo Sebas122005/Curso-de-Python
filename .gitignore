@@ -4,3 +4,5 @@ __pycache__/
 mv_project/
 config/
 config.ini
+settings.py
+docker-compose.yml

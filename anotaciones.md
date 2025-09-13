@@ -19,5 +19,21 @@
 > jupyter lab
 # Guardar librerias instaladas de mi entorno virtual en requirements.txt
 > pip freeze > requirements.txt
+
+# Ver liibrerias instaladas en el entorno virtual
+> pip freeze --local
+
 # Instalar librerias de requirements.txt
 > pip install -r requirements.txt
+
+# Instalar libreria django
+> pip install django
+
+# Crear configuración de Proyecto django
+> django-admin startproject nombre_proyecto
+
+# Levantar Server con django con la configuración...
+> python manage.py runserver
+
+# Levantar app después de haber creado la congiguración...
+> python manage.py startapp app_cliente
