@@ -37,3 +37,15 @@
 
 # Levantar app después de haber creado la congiguración...
 > python manage.py startapp app_cliente
+
+# Libreria necesaria para usar ImageField para imagenes
+## Instalación
+> pip install Pillow
+
+# Migrar modelado: Lo que hace es crear las tablas segun el modelado que se puso en models.py
+> python manage.py migrate
+> python manage.py makemigrations
+
+# Administrador de Django: /admin
+## Crear Superusuario para Administración en Django
+> python manage.py createsuperuser

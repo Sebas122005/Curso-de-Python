@@ -6,3 +6,4 @@ config/
 config.ini
 settings.py
 docker-compose.yml
+*imagenes

@@ -16,11 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import crud_clientes.views.view_index as vi
+from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', vi.bienvenida, name="Bienvenida"),
-    path('despedida/', vi.despedida, name="Despedida"),
-    path('enviar_datos/<str:nombre>/<str:apellido>/<int:edad>/<str:curso>/', vi.enviar_datos, name="Datos enviados"), 
+    path('',include('app_cliente.urls'))
 ]
