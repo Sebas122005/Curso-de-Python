@@ -23,3 +23,8 @@ def crear(request):
         formulario.save()
         return redirect('listado-clientes')
     return render(request,'crud/crear.html',{'formulario':formulario})
+
+def eliminar(request,id):
+    obj=Clientes.objects.get(id=id)
+    obj.delete()
+    return redirect('listado-clientes')
