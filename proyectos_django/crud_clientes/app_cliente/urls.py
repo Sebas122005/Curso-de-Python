@@ -8,6 +8,7 @@ urlpatterns =[
     path('nosotros',views.nosotros,name='nosotros'),
     path('clientes/listar',views.listado_clientes,name='listado-clientes'),
     path('clientes/crear',views.crear,name='crear-clientes'),
-    path('clientes/eliminar/<int:id>',views.eliminar,name='eliminar')
+    path('clientes/eliminar/<int:id>',views.eliminar,name='eliminar'),
+    path('clientes/editar/<int:id>', views.editar,name='editar')
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 

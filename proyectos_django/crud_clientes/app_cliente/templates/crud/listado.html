@@ -40,7 +40,7 @@
             <td>{{cl.direccion}}</td>
             <td><img src="{{cl.foto.url}}" height="60px"></td>
             <td>
-                <a name='btneditar' id='btneditar' class='btn btn-info'href='#'role='button'>
+                <a name='btneditar' id='btneditar' class='btn btn-info'href="{% url 'editar' cl.id %}"role='button'>
                     Editar
                 </a>
                 <a name='btneliminar' id='btneliminar' class='btn btn-danger'href="{% url 'eliminar' cl.id %}"role='button'>

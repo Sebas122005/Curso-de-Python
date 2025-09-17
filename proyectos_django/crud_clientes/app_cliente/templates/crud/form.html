@@ -1,7 +1,10 @@
 <form enctype="multipart/form-data" method="POST">
   {% csrf_token %} {% for campo in formulario %}
   <div class="mb-3">
-    <label for="{{campo.name}}" class="form-label">{{campo.label}}</label>
+    <label for="{{campo.name}}" class="form-label">{{campo.label}} :</label>
+    {% if campo.field.widget.input_type == 'file' and campo.value %}
+      <img src="{{MEDIA_URL}}/imagenes/{{campo.value}}" alt="" width="100px" />
+    {% endif %}
     <input
       type="{{campo.field.widget.input_type}}"
       class="form-control"

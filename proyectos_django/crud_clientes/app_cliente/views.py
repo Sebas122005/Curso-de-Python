@@ -28,3 +28,11 @@ def eliminar(request,id):
     obj=Clientes.objects.get(id=id)
     obj.delete()
     return redirect('listado-clientes')
+
+def editar(request,id):
+    obj=Clientes.objects.get(id=id)
+    formulario= ClientesForm(request.POST or None, request.FILES or None, instance=obj)
+    if(formulario.is_valid() and request.POST):
+        formulario.save()
+        return redirect('listado-clientes')
+    return render(request,'crud/editar.html',{'formulario':formulario})
