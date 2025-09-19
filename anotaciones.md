@@ -49,3 +49,7 @@
 # Administrador de Django: /admin
 ## Crear Superusuario para Administración en Django
 > python manage.py createsuperuser
+
+# Dar formato a instancias con django-crispy-forms
+> pip install django-crispy-forms
+## Luego de la instalcion configurar el settings para el uso de django-crispy-forms
