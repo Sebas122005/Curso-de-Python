@@ -11,7 +11,7 @@ def lista(request):
     client = Cliente.objects.all()
     return render(request,'crud/listado.html',{'clientes':client})
 
-def crear_editar(request,id=0):
+def crear(request):
     if(request.method=='GET'):
         formulario=ClienteForm()
         return render(request,'crud/crear.html',{'formulario':formulario})
