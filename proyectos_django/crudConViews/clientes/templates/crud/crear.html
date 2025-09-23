@@ -9,18 +9,18 @@
         <h4 class="card-title">Nuevo Cliente</h4>
         <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
             {% csrf_token %}
-            {{ formulario.nombre|as_crispy_field }}
-            {{formulario.apellido_paterno|as_crispy_field}}
-            {{formulario.apellido_materno|as_crispy_field}}
-            {% if formulario.foto.value %}
-                <img src="{{MEDIA_URL}}/imagenes/{{formulario.foto.value}}" alt="Imagen {{cl.id}}" width="100" />
+            {{ form.nombre|as_crispy_field }}
+            {{form.apellido_paterno|as_crispy_field}}
+            {{form.apellido_materno|as_crispy_field}}
+            {% if form.foto.value %}
+                <img src="{{MEDIA_URL}}/imagenes/{{form.foto.value}}" alt="Imagen {{cl.id}}" width="100" />
             {% endif %}
-            {{formulario.foto|as_crispy_field}}
-            {{formulario.lenguaje|as_crispy_field}}
-            {{formulario.so|as_crispy_field}}
+            {{form.foto|as_crispy_field}}
+            {{form.lenguaje|as_crispy_field}}
+            {{form.so|as_crispy_field}}
 
             <button class="btn btn-primary" type="submit">Guardar</button>
-            <a class="btn btn-danger" href="{% url 'lista' %}">Cancelar</a>
+            <a class="btn btn-danger" href="{% url 'clientes_app:lista' %}">Cancelar</a>
         </form>
     </div>
     <div class="card-footer text-muted">|-|-|</div>

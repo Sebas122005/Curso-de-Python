@@ -8,7 +8,7 @@
         name="btnnuevo"
         id="btnnuevo"
         class="btn btn-primary"
-        href="{% url 'crear_editar' id=0 %}"
+        href="{% url 'clientes_app:crear' %}"
         role="button"
         >Nuevo</a
     >
@@ -25,6 +25,8 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido Paterno</th>
             <th scope="col">Apellido Materno</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Area</th>
             <th scope="col">Foto</th>
             <th scope="col">Lennguaje</th>
             <th scope="col">S.O.</th>
@@ -38,14 +40,16 @@
             <td>{{cl.nombre}}</td>
             <td>{{cl.apellido_paterno}}</td>
             <td>{{cl.apellido_materno}}</td>
+            <td>{{cl.edad}}</td>
+            <td>{{cl.area}}</td>
             <td><img src="{{cl.foto.url}}" height="60px"></td>
             <td>{{cl.lenguaje}}</td>
             <td>{{cl.so}}</td>
             <td>
-                <a name='btneditar' id='btneditar' class='btn btn-info'href="{% url 'crear_editar' cl.id %}"role='button'>
+                <a name='btneditar' id='btneditar' class='btn btn-info'href="#"role='button'>
                     Editar
                 </a>
-                <a name='btneliminar' id='btneliminar' class='btn btn-danger'href="{% url 'eliminar' cl.id %}"role='button'>
+                <a name='btneliminar' id='btneliminar' class='btn btn-danger'href="#"role='button'>
                     Eliminar
                 </a>
                 </td>
