@@ -12,7 +12,7 @@ class Inicio(TemplateView):
 class Lista(ListView):
     template_name='crud/listado.html'
     model=Cliente
-    ordering='nombre'
+    ordering='id'
     queryset=Cliente.objects.all()
     context_object_name='clientes'
 
@@ -21,7 +21,22 @@ class Crear(CreateView):
     model=Cliente
     #fields = '__all__'
     form_class=ClienteForm
-    context_object_name='formulario'
 
+    def get_success_url(self,**kwargs):
+        return reverse('clientes_app:lista')
+
+class Editar(UpdateView):
+    template_name='crud/editar.html'
+    model=Cliente
+    form_class=ClienteForm
+    pk_url_kwarg='pk'
+    def get_success_url(self,**kwargs):
+        return reverse('clientes_app:lista')
+    
+
+class Eliminar(DeleteView):
+    template_name='crud/eliminar.html'
+    model=Cliente
+    pk_url_kwarg='pk'
     def get_success_url(self,**kwargs):
         return reverse('clientes_app:lista')

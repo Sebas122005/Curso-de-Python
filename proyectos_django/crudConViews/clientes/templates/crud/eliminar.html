@@ -1,0 +1,19 @@
+{% extends "pages/base.html" %}
+
+{% block titulo %}Eliminar Cliente{% endblock titulo %}
+{% block contenido %}
+<div class="card">
+    <div class="card-header">Eliminando... Cliente</div>
+    <div class="card-body">
+        <h4 class="card-title">Eliminando.. Cliente</h4>
+        <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+            {% csrf_token %}
+            <label>Estas seguro que deseas eliminar a {{object.nombre}}?</label>
+            <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+            <a class="btn btn-info" href="{% url 'clientes_app:lista' %}">Cancelar</a>
+        </form>
+    </div>
+    <div class="card-footer text-muted">|-|-|</div>
+</div>
+
+{% endblock contenido %}

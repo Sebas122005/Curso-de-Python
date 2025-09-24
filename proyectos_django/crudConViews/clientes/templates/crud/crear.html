@@ -12,12 +12,16 @@
             {{ form.nombre|as_crispy_field }}
             {{form.apellido_paterno|as_crispy_field}}
             {{form.apellido_materno|as_crispy_field}}
+            {{form.edad|as_crispy_field}}
             {% if form.foto.value %}
                 <img src="{{MEDIA_URL}}/imagenes/{{form.foto.value}}" alt="Imagen {{cl.id}}" width="100" />
             {% endif %}
+
+
             {{form.foto|as_crispy_field}}
             {{form.lenguaje|as_crispy_field}}
             {{form.so|as_crispy_field}}
+            {{form.area|as_crispy_field}}
 
             <button class="btn btn-primary" type="submit">Guardar</button>
             <a class="btn btn-danger" href="{% url 'clientes_app:lista' %}">Cancelar</a>

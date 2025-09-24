@@ -1,16 +1,33 @@
 {% extends "pages/base.html" %}
+{% load crispy_forms_tags %}
+
 {% block titulo %}Editar Cliente{% endblock titulo %}
 {% block contenido %}
 <div class="card">
-    <div class="card-header">
-        Editar Cliente
-    </div>
+    <div class="card-header">Editar Cliente</div>
     <div class="card-body">
-        <h4 class="card-title">Cliente</h4>
-        {% include "crud/form.html" %}
-    </div>
-    <div class="card-footer text-muted">
+        <h4 class="card-title">Editando.. Cliente</h4>
+        <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+            {% csrf_token %}
+            {{ form.nombre|as_crispy_field }}
+            {{form.apellido_paterno|as_crispy_field}}
+            {{form.apellido_materno|as_crispy_field}}
+            {{form.edad|as_crispy_field}}
+            {% if form.foto.value %}
+                <img src="{{MEDIA_URL}}/imagenes/{{form.foto.value}}" alt="Imagen {{cl.id}}" width="100" />
+            {% endif %}
 
+
+            {{form.foto|as_crispy_field}}
+            {{form.lenguaje|as_crispy_field}}
+            {{form.so|as_crispy_field}}
+            {{form.area|as_crispy_field}}
+
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <a class="btn btn-danger" href="{% url 'clientes_app:lista' %}">Cancelar</a>
+        </form>
     </div>
+    <div class="card-footer text-muted">|-|-|</div>
 </div>
+
 {% endblock contenido %}

@@ -46,10 +46,10 @@
             <td>{{cl.lenguaje}}</td>
             <td>{{cl.so}}</td>
             <td>
-                <a name='btneditar' id='btneditar' class='btn btn-info'href="#"role='button'>
+                <a name='btneditar' id='btneditar' class='btn btn-info'href="{% url 'clientes_app:editar' cl.id %}"role='button'>
                     Editar
                 </a>
-                <a name='btneliminar' id='btneliminar' class='btn btn-danger'href="#"role='button'>
+                <a name='btneliminar' id='btneliminar' class='btn btn-danger'href="{% url 'clientes_app:eliminar' cl.id %}"role='button'>
                     Eliminar
                 </a>
                 </td>
