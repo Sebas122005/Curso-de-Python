@@ -52,4 +52,4 @@
 
 # Dar formato a instancias con django-crispy-forms
 > pip install django-crispy-forms
-## Luego de la instalcion configurar el settings para el uso de django-crispy-forms
+## Luego de la instalacion configurar el settings para el uso de django-crispy-forms
